@@ -1,0 +1,47 @@
+# class zp
+<td class="text-left text-nowrap padright24"><span class="label label-cat-B label-as-badge" style="font-size:8px;">
+B
+</span> </td>
+
+# class own
+<td class="text-left text-nowrap padright24 sorting_1"><span class="label label-cat-C label-as-badge" style="font-size:[object Object]px;">
+C
+</span> </td>
+
+# rank
+<td class="text-right text-nowrap"><small>
+421.65
+</small></td>
+
+# name & team
+<td class="text-left text-nowrap athlete_col sorting_3"><div style="width:100%;position:relative"><span class="flag-icon flag-icon-fr"></span> 
+<a href="profile.php?z=1076495" title="44006 nicolas roques (TC15)">44006 nicolas roques (TC15)</a>
+<small style="position:absolute;right:0"><span class="label label-custom" style="margin-left:5px;background-color:#000000;border-color:#e81212 !important;color:#ea1010">
+<a href="team.php?id=3041" style="color:#ea1010">TC15</a>
+</span></small></div></td>
+
+# weight
+<td class="text-right text-nowrap">77.0<rsmall>kg</rsmall></td>
+
+# age group
+<td class="text-center text-nowrap">Vet</td>
+
+# height
+<td class="text-center text-nowrap">175<rsmall>cm</rsmall></td>
+
+# twenty minute wkg
+<td class="text-right text-nowrap">3.6<rsmall> wkg</rsmall></td>
+
+# twenty minute watts
+<td class="text-right text-nowrap">280<rsmall> w</rsmall></td>
+
+# fifteen second wkg
+<td class="text-right text-nowrap">7.2<rsmall> wkg</rsmall></td>
+
+# fifteen second watts
+<td class="text-right text-nowrap">554<rsmall> w</rsmall></td>
+
+# ???
+<td class="text-left text-nowrap padright24"></td>
+
+['B', 'C', '421.65', '44006 nicolas roques (TC15)TC15', '77.0kg', 'Vet', '175cm', '3.6 wkg', '280 w', '7.2 wkg', '554 w']
