@@ -8,31 +8,43 @@ class ZwiftRacePredictor:
     def __init__(self):
         self.ws = webscraper.WebScraper()
         self.ws.login()
+        self.rider = pd.DataFrame
 
     def get_race_signups(self, race_id):
-        html_raw = self.ws.get_page("https://zwiftpower.com/events.php?zid=" + str(race_id))
-        html_processed = BeautifulSoup(html_raw, "lxml")
+        # get signup data from zwiftpower
+        raw_data = self.ws.get_page("https://zwiftpower.com/events.php?zid=" + str(race_id))
 
-        signups = html_processed.find('table', {'id':'table_event_signups'})
+        # format raw data
+        formated_data = BeautifulSoup(raw_data, "lxml")
 
-        #file1 = open("signups.txt","w")
-        #file1.write(str(html_raw))
+        # extract signup table from formated data
+        signups = formated_data.find('table', {'id':'table_event_signups'})
 
-        table_rows = signups.find_all('tr')
+        # split signup table into rows, creating the field (array of riders)
+        field = signups.find_all('tr')
 
-        res = []
-        for tr in table_rows:
-            td = tr.find_all('td')
-            row = [tr.text.strip() for tr in td if tr.text.strip()]
+        rider_list = []
+
+        # each row in field is one rider
+        for row in field:
+
+            # split row into riders attributes
+            attributes = row.find_all('td')
+
+            # remove overhead
+            row = [row.text.strip() for row in attributes]
+
+            # add rider to list
             if row:
-                res.append(row)
+                rider_list.append(row)
 
-        return pd.DataFrame(res, columns=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"])
+        # coverting list into dataframe for easier handling
+        self.rider = pd.DataFrame(rider_list, columns=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"])
 
     def analyze_race(self, race_id):
-        signups = self.get_race_signups(race_id)
+        self.get_race_signups(race_id)
+        print(self.rider.head())
 
 zrp = ZwiftRacePredictor()
 
-signups = zrp.get_race_signups("2255013")
-print(signups)
+zrp.analyze_race("2256709")
