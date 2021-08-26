@@ -1,12 +1,13 @@
 import time
 from selenium import webdriver
+import pathlib
 
 class WebScraper:
 
     def __init__(self):
         self.username = "xershoxx"
         self.password = "sout!shiw!joun5ZOUC"
-        self.driver = webdriver.Chrome("C:\\Users\\claud\\Documents\\Projects\\Zwiftpower_Race-Analysis\\prototype\\chromedriver.exe")
+        self.driver = webdriver.Chrome(str(pathlib.Path().resolve()) + "\chromedriver.exe")
 
     def login(self):
         self.driver.get("https://zwiftpower.com")
